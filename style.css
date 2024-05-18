@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'dnlsptzk';
+    src: url('/fonts/dnlsptzk.woff2') format('woff2'),
+      url('/fonts/dnlsptzk.woff') format('woff');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'sang-bleu';
+    src: url('/fonts/SangBleuOGSerif-Regular-WebS.woff2') format('woff2'),
+      url('/fonts/SangBleuOGSerif-Regular-WebS.woff') format('woff');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'suisse-book';
+    src: url('/fonts/SuisseIntl-Book-WebM.woff2') format('woff2'),
+      url('/fonts/SuisseIntl-Book-WebM.woff') format('woff');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'afronaut';
+    src: url('/fonts/Afronaut-Regular.woff2') format('woff2'),
+      url('/fonts/Afronaut-Regular.woff') format('woff');
+    font-display: swap;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .details {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  .folder-switcher-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .folder-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .folder-button {
+    font-family: 'suisse-book', sans-serif;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 20px;
+  }
+  
+  .folder-button:hover {
+    background: #555;
+  }
+  
+  .folder-content {
+    font-family: 'sang-bleu', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  #render-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  .circle-follow {
+    width: 75px;
+    height: 75px;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: background-color 0.3s, transform 0.3s, width 0.3s, height 0.3s;
+    mix-blend-mode: difference;
+    background-color: transparent;
+    filter: invert(100%);
+    z-index: 10000000;
+  }
+  
+  .circle-follow:hover {
+    filter: grayscale(100%);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .ball-text {
+      font-size: 2rem;
+      right: 50%;
+      bottom: 25%;
+      transform: translate(50%, 50%);
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .ball-text {
+    position: fixed;
+    z-index: 2;
+    color: white;
+    font-size: 5rem;
+    right: 20%;
+    bottom: 40%;
+    transform: translate(-40%, -125%);
+    font-family: 'afronaut', sans-serif;
+  }
